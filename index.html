@@ -76,15 +76,13 @@
 <body>
     <div class="wrapper">
         <div class="header">
-          <div class="photo" style="display:none">
-          </div>
           <h1 class="quote">Yuuki Wesp</h1>
           <h3>- Senior software engineer -</h3>
         </div>
         <div id="side" class="side">
           <div class="photo">
           </div>
-          <div class="info">
+          <div class="side-info">
             <h2>Basic information</h2>
             <div class="line"></div>
             <p>Name: Yuuki Wesp</p>
@@ -93,28 +91,32 @@
             <p>Github: <a target="_blank" href="https://api.0xf6.moe/github">0xF6 <i class="fa fa-link"></i></a></p>
             <p>Telegram: <a target="_blank" href="https://api.0xf6.moe/telegram">@yuuki <i class="fa fa-link"></i></a></p>
           </div>
-          <div class="skills">
+          <div class="side-info">
             <h2>Programming language</h2>
             <div class="line"></div>
             <p>C# ［8+ years］</p>
             <p>C\C++ ［3+ years］</p>
             <p>JS / TS / Vue ［5+ years］</p>
-            <br><br>
+          </div>
+          <div class="side-info">
             <h2>Technologies</h2>
             <div class="line"></div>
             <p>Unity Engine</p>
             <p>ASP.NET ［7+ years］</p>
             <p>Entity Framework</p>
             <p>Docker, K8s</p>
-            <p>Oracle\PostgreSQL\MongoDB\Firestore</p>
+            <p>Oracle\PgSQL\MongoDB</p>
             <p>Elastic Stack</p>
             <p>Google Cloud, Vercel</p>
+          </div>
+          <div class="side-info">
             <h2>Study</h2>
             <div class="line"></div>
             <p>Assembler</p>
             <p>Lexical semantics</p>
             <p>Elementary Particle physics</p>
-      
+          </div>
+          <div class="side-info">
             <h2>Interest</h2>
             <div class="line"></div>
             <p>Gaming</p>
@@ -157,7 +159,7 @@
           <h2>Work experience</h2>
           <div class="line"></div>
           <ul class="timeline">
-            <div class="event" data-date="2022—2023">
+            <div class="event" data-date="2022-2023">
               <h3>Backend Architect</h3>
               <h4>Demedia (demedia.pro)</h4>
               <h4>Architecture development meta server for mobile game</h4>
@@ -167,7 +169,7 @@
               <li>Configuring infra, analytics, log collection and replication</li>
             </div><br>
 
-            <div class="event" data-date="2020—2022">
+            <div class="event" data-date="2020-2022">
                 <h3>Fullstack Developer</h3>
                 <h4>ItSph (itsph.ru)</h4>
                 <h4>Architecture development CRM</h4>
@@ -225,20 +227,9 @@
 
       <script lang="JS">
         document.addEventListener("DOMContentLoaded", function(event) {
-            const side = document.getElementById("side")
             const mail = CryptoJS.AES.decrypt("U2FsdGVkX18dG2B3L0rleC/ZBwYjQsAysPrPCWc0xo8tx91qJ42FmpbjS9txqHeI", "crawlerprotect").toString(CryptoJS.enc.Utf8)
             document.getElementById("mailbox").innerHTML = `${mail}  <i class="fa fa-link"></i> `;
             document.getElementById("mailbox").href = `mailto:${mail}`;
-
-            const observer = new ResizeObserver(entries => {
-                entries.forEach(entry => {
-                    //side.style = `height: ${entry.contentRect.height + 300}px`
-                    side.style.height = `${entry.contentRect.height + 300}px`;
-                });
-            });
-
-            const someEl = document.querySelector('#content');
-            observer.observe(someEl);
         });
       </script>
 </body>
