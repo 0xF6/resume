@@ -1,13 +1,18 @@
 * {
   box-sizing: border-box;
+
+  -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+  color-adjust: exact !important;                 /* Firefox 48 – 96 */
+  print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
 }
+
 
 body {
   min-height: 100vh;
   margin: 0;
   padding: 20px 15px 0;
   font-family: "Raleway", "Microsoft JhengHei";
-  background: url(/resources/background.jpg)  no-repeat center center fixed red;
+  background: url(/resources/background.jpg)  no-repeat center center fixed;
   background-size: cover;
 }
 
