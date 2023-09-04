@@ -225,7 +225,7 @@
       <script lang="JS">
         document.addEventListener("DOMContentLoaded", function(event) {
             const mail = CryptoJS.AES.decrypt("U2FsdGVkX18dG2B3L0rleC/ZBwYjQsAysPrPCWc0xo8tx91qJ42FmpbjS9txqHeI", "crawlerprotect").toString(CryptoJS.enc.Utf8)
-            document.getElementById("mailbox").html = `${mail}  <i class="fa fa-link"></i> `;
+            document.getElementById("mailbox").innerHTML = `${mail}  <i class="fa fa-link"></i> `;
             document.getElementById("mailbox").href = `mailto:${mail}`;
         });
       </script>
