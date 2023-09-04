@@ -35,7 +35,7 @@ html {
   top: 20px;
   width: 300px;
   padding: 20px;
-  height: 3285px;
+  min-height: 2285px;
   color: #fff;
 }
 .side h2 {

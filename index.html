@@ -81,7 +81,7 @@
           <h1 class="quote">Yuuki Wesp</h1>
           <h3>- Senior software engineer -</h3>
         </div>
-        <div class="side">
+        <div id="side" class="side">
           <div class="photo">
           </div>
           <div class="info">
@@ -123,7 +123,7 @@
             <p>Piano</p>
           </div>
         </div>
-        <div class="content">
+        <div id="content" class="content">
           <h2>About</h2>
           <div class="line"></div>
           <p>
@@ -224,9 +224,20 @@
 
       <script lang="JS">
         document.addEventListener("DOMContentLoaded", function(event) {
+            const side = document.getElementById("side")
             const mail = CryptoJS.AES.decrypt("U2FsdGVkX18dG2B3L0rleC/ZBwYjQsAysPrPCWc0xo8tx91qJ42FmpbjS9txqHeI", "crawlerprotect").toString(CryptoJS.enc.Utf8)
             document.getElementById("mailbox").innerHTML = `${mail}  <i class="fa fa-link"></i> `;
             document.getElementById("mailbox").href = `mailto:${mail}`;
+
+            const observer = new ResizeObserver(entries => {
+                entries.forEach(entry => {
+                    //side.style = `height: ${entry.contentRect.height + 300}px`
+                    side.style.height = `${entry.contentRect.height + 300}px`;
+                });
+            });
+
+            const someEl = document.querySelector('#content');
+            observer.observe(someEl);
         });
       </script>
 </body>
