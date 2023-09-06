@@ -71,22 +71,23 @@
     <link rel="stylesheet" href="resources/@alcohol.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18n-js@4.3.0/dist/browser/index.min.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="header">
-          <h1 class="quote">Yuuki Wesp</h1>
+          <h1 class="quote" lang><v-locale>{{selfName}}</v-locale></h1>
           <h3>- Senior software engineer -</h3>
         </div>
         <div id="side" class="side">
           <div class="photo">
           </div>
           <div class="side-info">
-            <h2>Basic information</h2>
+            <h2 lang><v-locale>{{basis_info}}</v-locale></h2>
             <div class="line"></div>
-            <p>Name: Yuuki Wesp</p>
-            <p>Age: 26 years old</p>
+            <p lang><v-locale>{{name}}</v-locale></p>
+            <p v-if="lang == 'en'">Age: 26 years old</p>
             <p>Mail: <a id="mailbox" target="_blank" href="mailto:crawler_resume@0xf6.moe">crawler_resume@0xf6.moe <i class="fa fa-link"></i></a></p>
             <p>Github: <a target="_blank" href="https://api.0xf6.moe/github">0xF6 <i class="fa fa-link"></i></a></p>
             <p>Telegram: <a target="_blank" href="https://api.0xf6.moe/telegram">@yuuki <i class="fa fa-link"></i></a></p>
@@ -99,7 +100,7 @@
             <p>JS / TS / Vue ［5+ years］</p>
           </div>
           <div class="side-info">
-            <h2>Technologies</h2>
+            <h2 lang><v-locale>{{technologies}}</v-locale></h2>
             <div class="line"></div>
             <p>Unity Engine</p>
             <p>ASP.NET ［7+ years］</p>
@@ -110,14 +111,14 @@
             <p>Google Cloud, Vercel</p>
           </div>
           <div class="side-info">
-            <h2>Study</h2>
+            <h2 lang><v-locale>{{study}}</v-locale></h2>
             <div class="line"></div>
-            <p>Assembler</p>
-            <p>Lexical semantics</p>
-            <p>Elementary Particle physics</p>
+            <p lang><v-locale>{{assembler}}</v-locale></p>
+            <p lang><v-locale>{{lexical}}</v-locale></p>
+            <p lang><v-locale>{{epm}}</v-locale></p>
           </div>
           <div class="side-info">
-            <h2>Interest</h2>
+            <h2 lang><v-locale>{{interest}}</v-locale></h2>
             <div class="line"></div>
             <p>Gaming</p>
             <p>Computer Science</p>
@@ -126,99 +127,47 @@
           </div>
         </div>
         <div id="content" class="content">
-          <h2>About</h2>
+          <h2 lang><v-locale>{{about}}</v-locale></h2>
           <div class="line"></div>
-          <p>
-            Computer Science is my major, GameDev is my interest, and Backend is my job. <br/>
-            I have multiple technologies in backend, IoT Devices, and GameDev at the same time.<br/>
-            I like to experiments in architecture,<br/> continue to innovate, and realize fanciful designs in my works. <br/>
-            Hand-carved, and accept various challenges with enthusiasm and a positive attitude. <br/>
-            I am also developing 2 games in steam</p>
-          <h2>Experience</h2>
+          <p lang><v-locale>{{summary}}</v-locale> </p>
+          <h2 lang><v-locale>{{experience}}</v-locale></h2>
           <div class="line"></div>
-          <h3><i class="fa fa-cubes"></i> Architecture</h3>
-          <li>Experience in the deploying of full-spectrum infra for server platforms with k8s, gitlab CI\CD, Elastic Stack</li>
-          <li>As well as using cloud providers to create infrastructure (Google Cloud)</li>
-          <li>Experience in setting up fault-tolerant systems analytics</li>
-          <li>And a secure features for infra (token rotation, vault provider and etc)</li>
-          <h3><i class="fa fa-paint-brush"></i> Server Backends</h3>
-          <li>Experience in creating distributed server computing for game worlds</li>
-          <li>Development of fault-tolerant microservices of banking systems</li>
-          <li>Developing platforms for collaborative robot manipulators</li>
-          <li>Experience in working out the architecture of server contracts (protobuf, GraphQL, Json RPC)</li>
-          <h3><i class="fa fa-cog"></i> Game Dev Backend</h3>
-          <li>Experience in developing cheat-tolerant client logic</li>
-          <li>Developing RPC contracts for the mobile client (websocket and custom protocols)</li>
-          <li>Experience in developing of fault-tolerant meta-server in virtual actors (orleans) </li>
-          <h3><i class="fa fa-bolt"></i> IoT and Consumer Electronics</h3>
-          <li>Experience in full flow of device manufacturing</li>
-          <li>Preparation of drawings of electronic circuits in EasyEda and Altium Designer</li>
-          <li>Work with suppliers of production facilities for the manufacture of PCB boards</li>
-          <li>Preparing RoHS certification</li>
-          <li>Developing IoT firmwares on AVR and ESP platforms</li>
-          <h2>Work experience</h2>
+          <h3 lang><i class="fa fa-cubes"></i> <v-locale>{{architecture}}</v-locale></h3>
+          <v-locale>{{architecture_point}}</v-locale>
+          <h3 lang><i class="fa fa-paint-brush"></i> <v-locale>{{server_backend}}</v-locale></h3>
+          <v-locale>{{server_backend_point}}</v-locale>
+          <h3 lang><i class="fa fa-cog"></i> <v-locale>{{gamedev_backend}}</v-locale></h3>
+          <v-locale>{{gamedev_backend_point}}</v-locale>
+          <h3 lang><i class="fa fa-bolt"></i> <v-locale>{{iot_title}}</v-locale></h3>
+          <v-locale>{{iot_title_point}}</v-locale>
+          <h2><v-locale>{{work_experience}}</v-locale></h2>
           <div class="line"></div>
           <ul class="timeline">
             <div class="event" data-date="2022-2023">
-              <h3>Backend Architect</h3>
-              <h4>Demedia (demedia.pro)</h4>
-              <h4>Architecture development meta server for mobile game</h4>
-              <li>I started working with building infra and server architecture for game logic</li>
-              <li>Setup CI\CD of containers for k8s</li>
-              <li>Worked out the sequence of transferring client logic to the server side</li>
-              <li>Configuring infra, analytics, log collection and replication</li>
+              <v-locale>{{j_07}}</v-locale>
             </div><br>
 
             <div class="event" data-date="2020-2022">
-                <h3>Fullstack Developer</h3>
-                <h4>ItSph (itsph.ru)</h4>
-                <h4>Architecture development CRM</h4>
-                <li>I started working with building infra and server architecture</li>
-                <li>Built a graph system for storing documents and other entities with (MongoDB, NodeJs)</li>
-                <li>Developed UI\UX to work with the system</li>
-                <li>Developing LDAP Active Directory Auth</li>
+                <v-locale>{{j_06}}</v-locale>
               </div><br>
 
             <div class="event" data-date="2020">
-                <h3>Hardware Engineer</h3>
-                <h4>ItSph (itsph.ru)</h4>
-                <h4>Complex device development</h4>
-                <li>I started working with building infra and server architecture</li>
-                <li>Built a electrical circuits, PCB board design, firware for yacht monitoring device</li>
-                <li>Preparation of boards for RoHS certification</li>
-                <li>Collision Detection system, tracking movement, speed and other metrics</li>
+                <v-locale>{{j_05}}</v-locale>
               </div><br>
 
             <div class="event" data-date="2019-2020">
-                <h3>Backend Developer</h3>
-                <h4>OpenBank (www.open.ru)</h4>
-                <h4>Team development of the VIP client system</h4>
-                <li>I started worked with integrations and adding features to services</li>
-                <li>Working with printed forms</li>
-                <li>Code generation of contracts for the GraphQL client side</li>
-                <li>Rework the service of credit assets</li>
+                <v-locale>{{j_04}}</v-locale>
               </div><br>
 
             <div class="event" data-date="2018-2019">
-                <h3>FullStack Developer</h3>
-                <h4>ItSph (itsph.ru)</h4>
-                <h4>Collaborative Robots System</h4>
-                <li>Developed a platform for working with a robot manipulator</li>
-                <li>Developed a scripting language for compiling robot commands</li>
+                <v-locale>{{j_03}}</v-locale>
               </div><br>
 
               <div class="event" data-date="2017-2018">
-                <h3>FullStack Developer</h3>
-                <h4>ItSph (itsph.ru)</h4>
-                <li>Full cycle of vehicle positioning system development</li>
-                <li>Created a system for calculating positions by LBS towers and GPS logic</li>
+                <v-locale>{{j_02}}</v-locale>
               </div><br>
-
               <div class="event" data-date="2016-2017">
-                <h3>Juniour Developer</h3>
-                <h4>ItSph (itsph.ru)</h4>
-                <li>Work on an embedded solution for ATMs</li>
-                <li>With many banks integrations</li>
+                <v-locale>{{j_01}}</v-locale>
               </div><br>
           </ul>
         <br><br><br>
@@ -226,10 +175,210 @@
       </div>
 
       <script lang="JS">
+        const i18n = new I18n.I18n({
+              en: {
+                selfName: "Yuuki Wesp",
+                name: "Name: {selfName}",
+                basis_info: "Basic information",
+                interest: "Interest",
+                study: "Study",
+                assembler: "Assembler",
+                lexical: "Lexical semantics",
+                epm: "Elementary Particle physics",
+                technologies: "Technologies",
+                summary: `Computer Science is my major, GameDev is my interest, and Backend is my job. <br/>
+I have multiple technologies in backend, IoT Devices, and GameDev at the same time.<br/>
+I like to experiments in architecture,<br/> continue to innovate, and realize fanciful designs in my works. <br/>
+Hand-carved, and accept various challenges with enthusiasm and a positive attitude. <br/>
+I am also developing 2 games in steam`,
+                about: "About",
+                experience: "Experience",
+                architecture: "Architecture",
+                architecture_point: `<li>Experience in the deploying of full-spectrum infra for server platforms with k8s, gitlab CI\CD, Elastic Stack</li>
+<li>As well as using cloud providers to create infrastructure (Google Cloud)</li>
+<li>Experience in setting up fault-tolerant systems analytics</li>
+<li>And a secure features for infra (token rotation, vault provider and etc)</li>`,
+                server_backend: "Server Backends",
+                server_backend_point: ` <li>Experience in creating distributed server computing for game worlds</li>
+<li>Development of fault-tolerant microservices of banking systems</li>
+<li>Developing platforms for collaborative robot manipulators</li>
+<li>Experience in working out the architecture of server contracts (protobuf, GraphQL, Json RPC)</li>`,
+                gamedev_backend: "Game Dev Backend",
+                gamedev_backend_point: `<li>Experience in developing cheat-tolerant client logic</li>
+<li>Developing RPC contracts for the mobile client (websocket and custom protocols)</li>
+<li>Experience in developing of fault-tolerant meta-server in virtual actors (orleans) </li>`,
+                iot_title: "IoT and Consumer Electronics",
+                iot_title_point: `<li>Experience in full flow of device manufacturing</li>
+<li>Preparation of drawings of electronic circuits in EasyEda and Altium Designer</li>
+<li>Work with suppliers of production facilities for the manufacture of PCB boards</li>
+<li>Preparing RoHS certification</li>
+<li>Developing IoT firmwares on AVR and ESP platforms</li>`,
+                work_experience: "Work experience",
+                j_01: `<h3>Juniour Developer</h3>
+<h4>ItSph (itsph.ru)</h4>
+<li>Work on an embedded solution for ATMs</li>
+<li>With many banks integrations</li>`,
+                j_02: `<h3>FullStack Developer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <li>Full cycle of vehicle positioning system development</li>
+                <li>Created a system for calculating positions by LBS towers and GPS logic</li>`,
+                j_03: `<h3>FullStack Developer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <h4>Collaborative Robots System</h4>
+                <li>Developed a platform for working with a robot manipulator</li>
+                <li>Developed a scripting language for compiling robot commands</li>`,
+                j_04: `<h3>Backend Developer</h3>
+                <h4>OpenBank (www.open.ru)</h4>
+                <h4>Team development of the VIP client system</h4>
+                <li>I started worked with integrations and adding features to services</li>
+                <li>Working with printed forms</li>
+                <li>Code generation of contracts for the GraphQL client side</li>
+                <li>Rework the service of credit assets</li>`,
+                j_05: `<h3>Hardware Engineer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <h4>Complex device development</h4>
+                <li>I started working with building infra and server architecture</li>
+                <li>Built a electrical circuits, PCB board design, firware for yacht monitoring device</li>
+                <li>Preparation of boards for RoHS certification</li>
+                <li>Collision Detection system, tracking movement, speed and other metrics</li>`,
+                j_06: `<h3>Fullstack Developer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <h4>Architecture development CRM</h4>
+                <li>I started working with building infra and server architecture</li>
+                <li>Built a graph system for storing documents and other entities with (MongoDB, NodeJs)</li>
+                <li>Developed UI\UX to work with the system</li>
+                <li>Developing LDAP Active Directory Auth</li>`,
+                j_07: `<h3>Backend Architect</h3>
+              <h4>Demedia (demedia.pro)</h4>
+              <h4>Architecture development meta server for mobile game</h4>
+              <li>I started working with building infra and server architecture for game logic</li>
+              <li>Setup CI\\CD of containers for k8s</li>
+              <li>Worked out the sequence of transferring client logic to the server side</li>
+              <li>Configuring infra, analytics, log collection and replication</li>`
+              },
+              ru: {
+                selfName: "Юки Весп",
+                name: "Имя: {selfName}",
+                basis_info: "Базовая информация",
+                interest: "Интересы",
+                study: "Изучаю",
+                assembler: "Ассемблер",
+                lexical: "Лексические семантики",
+                epm: "Физика элементарных частиц",
+                technologies: "Технологиии",
+                summary: `Моя специализация это бекенд, геймдев и в целом Computer Science. <br/>
+            Работаю с большим разнообранием технологий и языков<br/>
+            Я люблю эксперементы в архитектурах, вводить инновации и реализовывать интересные задачи в моей работе. <br/>
+            Так же разрабатываю 2 игры дошедшие до стима.`,
+                about: "Обо мне",
+                experience: "Опыт",
+                architecture: "Архитектура",
+                architecture_point: `<li>Опыт развертывания инфраструктуры полного спектра для серверных платформ с использованием k8s, gitlab CI\CD, Elastic Stack</li>
+          <li>А также использование облачных провайдеров для создания инфраструктуры (Google Cloud)</li>
+          <li>Опыт настройки отказоустойчивых систем аналитики</li>
+          <li>И защищенные функции для ифнры (ротация токенов, системы хранения сенсетив данных и т.д.)</li>`,
+                server_backend: "Серверная разработка",
+                server_backend_point: `<li>Опыт создания распределенных серверных вычислений для игровых миров</li>
+          <li>Разработка отказоустойчивых микросервисов банковских систем</li>
+          <li>Разработка платформ для коллаборативных роботов-манипуляторов</li>
+          <li>Разработка архитектуры клиент-сервер взаимодействия, а так же систем контрактов (protobuf, GraphQL, Json RPC)</li>`,
+                gamedev_backend: "GameDev серверная разработка",
+                gamedev_backend_point: `<li>Опыт разработки клиентской логики, устойчивой к читерам</li>
+          <li>Разработка RPC-контрактов для мобильного клиента (websocket и кастомные протоколы)</li>
+          <li>Опыт разработки отказоустойчивых мета-серверов на основе virtual actors (Orleans)</li>`,
+                iot_title: "IoT и потребительская электроника",
+                iot_title_point: `<li>Опыт работы в полном цикле производства устройств</li>
+          <li>Подготовка чертежей электронных схем в EasyEDA и Altium Designer</li>
+          <li>Работа с поставщиками производственных мощностей для изготовления печатных плат</li>
+          <li>Подготовка к сертификации RoHS</li>
+          <li>Разработка прошивок на платформах AVR и ESP</li>`,
+                work_experience: "Рабочий опыт",
+                j_01: `<h3>Juniour Developer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <li>Работал над встраевым решением банкоматов</li>
+                <li>А так же с различными банковскими интеграциями</li>`,
+                j_02: `<h3>FullStack Developer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <li>Полный цикл разработки системы мониторинга и позиционирования автомобилей</li>
+                <li>Разработал систему расчета позиций машины с расчетам по LBS вышкам и GPS координатам</li>`,
+                j_03: `<h3>FullStack Developer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <h4>Система коллаборативных роботов</h4>
+                <li>Разработал систему для работы с роботом манипулятором</li>
+                <li>разработал скриптовой язык для программирования робота</li>
+                <li>Так же разработал систему сценариев действий для робота</li>`,
+                j_04: `<h3>Backend Developer</h3>
+                <h4>OpenBank (www.open.ru)</h4>
+                <h4>Командная работа над системой приватных клиентов</h4>
+                <li>Я работал над интеграциями и модификациями разного рода сервисов</li>
+                <li>Работал с настройкой печатных форм</li>
+                <li>Кодогенерация GraphQL+TypeScript для клиентов</li>
+                <li>Разработка процедур для Oracle</li>
+                <li>Переработал сервис кредитных активов</li>`,
+                j_05: `<h3>Hardware Engineer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <h4>Комплексная разработка устройства мониторинга яхты</h4>
+                <li>Построеил электрические схемы, дизайн печатной платы и прошивку</li>
+                <li>Подготавливал RoHS сертификацию</li>
+                <li>Разработал система обнаружения столкновений, отслеживающая движение, скорость и другие показатели</li>`,
+                j_06: `<h3>Fullstack Developer</h3>
+                <h4>ItSph (itsph.ru)</h4>
+                <h4>Разработка архитектуры CRM системы</h4>
+                <li>Я работал над созданием инфраструктуры и серверной архитектуры</li>
+                <li>Построил графическую систему для хранения документов и других объектов (MongoDB, NodeJS)</li>
+                <li>Разработал пользовательский интерфейс для работы с системой</li>
+                <li>Разработал LDAP Active Directory аутентификацию, а так же поддержку FIDO авторизации по ключам (yubikey и etc)</li>`,
+                j_07: `<h3>Backend Architect</h3>
+              <h4>Demedia (demedia.pro)</h4>
+              <h4>Разработка архитектуры метасервера для мобильной игры</h4>
+              <li>Я создал инфраструктуру и серверной архитектуру для игровой логики с нуля</li>
+              <li>Настройка CI\\CD контейнеров для k8s</li>
+              <li>Отработана последовательность передачи клиентской логики на серверную сторону</li>
+              <li>Настройка инфраструктуры, аналитики, сбора логов и репликации</li>`
+              }
+
+
+            });
+        window.i18n = i18n;
+        const regexpLang = /\#lang\=(\w+)/gm;
+        const result = regexpLang.exec(location.hash);
+        console.log(result);
+        if (result) i18n.locale = result[1];
+
+        customElements.define("v-locale", class extends HTMLElement {
+            constructor() {
+              super();
+              const regexp = /\{\{(\w+)\}\}/gm;
+              const regexpAdditional = /\{(\w+)\}/gm;
+              const result = regexp.exec(this.textContent);
+              if (!result) return;
+              let langOutput = i18n.t(result[1]);
+              const resultaAdditional = regexpAdditional.exec(langOutput);
+
+              if (resultaAdditional) {
+                langOutput = langOutput.replace(resultaAdditional[0], i18n.t(resultaAdditional[1]));
+              }
+
+              this.innerHTML = this.textContent.replace(result[0], langOutput);
+            }
+        });
+
+
         document.addEventListener("DOMContentLoaded", function(event) {
             const mail = CryptoJS.AES.decrypt("U2FsdGVkX18dG2B3L0rleC/ZBwYjQsAysPrPCWc0xo8tx91qJ42FmpbjS9txqHeI", "crawlerprotect").toString(CryptoJS.enc.Utf8)
             document.getElementById("mailbox").innerHTML = `${mail}  <i class="fa fa-link"></i> `;
             document.getElementById("mailbox").href = `mailto:${mail}`;
+
+
+            
+            document.querySelectorAll('[v-if]').forEach(function(x) { 
+              const val = x.attributes['v-if'].value;
+              const lang = i18n._locale;
+              const result = eval(val);
+
+              if (result === false) x.style.display = "none";
+            });
+        
         });
       </script>
 </body>
